@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101a27">
+  <title>KYNORA | Business Operations</title>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<div id="authScreen" class="auth-screen">
+  <div class="auth-card">
+    <div class="brand auth-brand">
+      <div class="brand-icon">K</div>
+      <div>
+        <h2>KYNORA</h2>
+        <span>BUSINESS OPERATIONS</span>
+      </div>
+    </div>
+
+    <div class="auth-heading">
+      <span class="eyebrow">YOUR BUSINESS. ONE WORKSPACE.</span>
+      <h1 id="authTitle">Create your account</h1>
+      <p id="authDescription">Register to get started with KYNORA.</p>
+    </div>
+
+    <form id="registerForm" class="auth-form">
+      <label>Full name</label>
+      <input name="full_name" type="text" placeholder="Your full name" minlength="2" maxlength="100" required>
+
+      <label>Email address</label>
+      <input name="email" type="email" placeholder="you@example.com" required>
+
+      <label>Password</label>
+      <input name="password" type="password" placeholder="At least 8 characters" minlength="8" maxlength="128" required>
+
+      <label>Business / Workspace name</label>
+      <input name="workspace_name" type="text" placeholder="Your business name" minlength="2" maxlength="100" required>
+
+      <label>Business type</label>
+      <input name="business_type" type="text" placeholder="e.g. Retail, Technology">
+
+      <button class="primary-button auth-submit" type="submit">Create account →</button>
+      <p class="auth-switch">Already registered? <button type="button" id="showLogin">Log in</button></p>
+    </form>
+
+    <form id="loginForm" class="auth-form" hidden>
+      <label>Email address</label>
+      <input name="email" type="email" placeholder="you@example.com" required>
+
+      <label>Password</label>
+      <input name="password" type="password" placeholder="Your password" required>
+
+      <button class="primary-button auth-submit" type="submit">Log in →</button>
+      <p class="auth-switch">New to KYNORA? <button type="button" id="showRegister">Create an account</button></p>
+    </form>
+
+    <p id="authMessage" class="auth-message" role="status"></p>
+  </div>
+</div>
+
+  <div class="app-shell">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">K</div>
+        <div>
+          <h2>KYNORA</h2>
+          <span>BUSINESS OPERATIONS</span>
+        </div>
+      </div>
+
+      <div class="nav-label">WORKSPACE</div>
+      <nav id="mainNav">
+        <button class="nav-item active" data-page="dashboard">⌂ <span>Dashboard</span></button>
+        <button class="nav-item" data-page="contacts">♙ <span>Contacts</span></button>
+        <button class="nav-item" data-page="leads">◎ <span>Leads</span></button>
+        <button class="nav-item" data-page="inbox">✉ <span>Inbox</span></button>
+        <button class="nav-item" data-page="tasks">✓ <span>Tasks</span></button>
+        <button class="nav-item" data-page="calendar">▦ <span>Calendar</span></button>
+
+        <div class="nav-label">GROWTH</div>
+        <button class="nav-item" data-page="campaigns">↗ <span>Campaigns</span></button>
+        <button class="nav-item" data-page="workflows">⟳ <span>Workflows</span></button>
+        <button class="nav-item" data-page="analytics">▥ <span>Analytics</span></button>
+
+        <div class="nav-label">INTELLIGENCE</div>
+        <button class="nav-item" data-page="assistant">✧ <span>AI Assistant</span></button>
+        <button class="nav-item" data-page="knowledge">▤ <span>Knowledge Base</span></button>
+
+        <div class="nav-label">PREFERENCES</div>
+        <button class="nav-item" data-page="settings">⚙ <span>Settings</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="status-dot"></div>
+        <span>Workspace active</span>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button id="menuToggle" class="icon-button">☰</button>
+        <div class="breadcrumb">Workspace / <strong id="pageTitle">Dashboard</strong></div>
+        <div class="top-actions">
+          <button id="themeToggle" class="icon-button">☼</button>
+          <div class="profile-avatar">K</div>
+        </div>
+      </header>
+
+      <section class="content" id="pageContent">
+        <div class="welcome-row">
+          <div>
+            <span class="eyebrow">BUSINESS OVERVIEW</span>
+            <h1>Welcome to KYNORA</h1>
+            <p>Your business operations, all in one place.</p>
+          </div>
+          <button class="primary-button" id="quickAction">＋ Quick action</button>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span>Total contacts</span>
+            <strong id="contactCount">—</strong>
+            <small>People in your workspace</small>
+          </article>
+          <article class="stat-card">
+            <span>Active leads</span>
+            <strong>0</strong>
+            <small>Potential customers</small>
+          </article>
+          <article class="stat-card">
+            <span>Pending tasks</span>
+            <strong>0</strong>
+            <small>Tasks to complete</small>
+          </article>
+          <article class="stat-card">
+            <span>Workflows</span>
+            <strong>0</strong>
+            <small>Automations created</small>
+          </article>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <h3>Business activity</h3>
+                <p>Your workspace at a glance</p>
+              </div>
+              <span class="live-label">LIVE OVERVIEW</span>
+            </div>
+            <div class="chart-placeholder">
+              <div class="chart-bars">
+                <i style="height:35%"></i>
+                <i style="height:55%"></i>
+                <i style="height:42%"></i>
+                <i style="height:75%"></i>
+                <i style="height:60%"></i>
+                <i style="height:90%"></i>
+                <i style="height:68%"></i>
+              </div>
+              <div class="chart-days">
+                <span>Mon</span><span>Tue</span><span>Wed</span>
+                <span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <h3>Quick access</h3>
+                <p>Manage your operations</p>
+              </div>
+            </div>
+            <div class="quick-links">
+              <button data-page="contacts">＋ Add contact <span>→</span></button>
+              <button data-page="tasks">✓ Manage tasks <span>→</span></button>
+              <button data-page="assistant">✧ Open AI assistant <span>→</span></button>
+              <button data-page="analytics">▥ View analytics <span>→</span></button>
+            </div>
+          </article>
+        </div>
+
+        <article class="panel recent-panel">
+          <div class="panel-heading">
+            <div>
+              <h3>Recent contacts</h3>
+              <p>Your latest workspace contacts</p>
+            </div>
+            <button class="text-button" data-page="contacts">View all →</button>
+          </div>
+          <div id="recentContacts" class="empty-state">
+            Your contacts will appear here.
+          </div>
+        </article>
+
+      </section>
+    </main>
+  </div>
+<script src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.pytest_cache/
+data/*.db
+data/*.sqlite
+backups/*
+!backups/.gitkeep
+
+# Node dependencies
+node_modules/
+
+# Android build files
+android/.gradle/
+android/local.properties
+android/**/build/
+
+# Signing keys and certificates
+*.jks
+*.keystore
+
+# Logs and temporary files
+*.log
+.DS_Store
