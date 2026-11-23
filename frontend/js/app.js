@@ -2,7 +2,12 @@
 const pageContent = document.getElementById("pageContent");
 const pageTitle = document.getElementById("pageTitle");
 const sidebar = document.getElementById("sidebar");
+// API CONNECTION
+const API_BASE_URL = "http://127.0.0.1:8000";
 
+function apiUrl(path) {
+  return `${API_BASE_URL}${path}`;
+}
 const pageInfo = {
   dashboard: {
     title: "Dashboard",
@@ -212,7 +217,7 @@ async function loadDashboardContacts() {
   if (!token) return;
 
   try {
-    const response = await fetch("/api/contacts/", {
+    const response = await fetch(apiUrl("/api/contacts/"), {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -378,7 +383,7 @@ registerForm.addEventListener("submit", async event => {
   };
 
   try {
-    const response = await fetch("/api/auth/register", {
+    const response = await fetch(apiUrl("/api/auth/register"), {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -426,7 +431,7 @@ loginForm.addEventListener("submit", async event => {
   const formData = new FormData(loginForm);
 
   try {
-    const response = await fetch("/api/auth/login", {
+    const response = await fetch(apiUrl("/api/auth/login"), {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -473,7 +478,7 @@ async function initializeAuthentication() {
   }
 
   try {
-    const response = await fetch("/api/auth/me", {
+    const response = await fetch(apiUrl("/api/auth/me"), {
       headers: {
         Authorization: `Bearer ${token}`
       }
